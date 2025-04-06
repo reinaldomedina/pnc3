@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Number Logic</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+    }
+    input, button {
+      padding: 0.5em;
+      font-size: 1em;
+      margin-right: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter a Number</h1>
+  <input id="input-x" type="number" />
+  <button onclick="processNumber()">Submit</button>
+  <p id="output">Result will appear here.</p>
+
+  <script>
+    function processNumber() {
+      const inputValue = document.getElementById("input-x").value;
+      const output = document.getElementById("output");
+
+      if (inputValue === "") {
+        output.innerText = "Please enter a number.";
+        return;
+      }
+
+      let x = parseFloat(inputValue);
+      let result;
+
+      if (x > 10) {
+        result = x * 2;
+        if (result > 100) {
+          result = result / 3;
+        }
+      } else {
+        result = x / 2;
+      }
+
+      output.innerText = `Result: ${result}`;
+    }
+  </script>
+</body>
+</html>
